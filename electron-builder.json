@@ -1,0 +1,47 @@
+{
+  "appId": "com.mcmodvisualeditor.app",
+  "productName": "Minecraft Mod Visual Editor",
+  "directories": {
+    "output": "release"
+  },
+  "files": [
+    "dist/**/*",
+    "dist-electron/**/*",
+    "package.json"
+  ],
+  "win": {
+    "target": [
+      {
+        "target": "nsis",
+        "arch": ["x64"]
+      },
+      {
+        "target": "portable",
+        "arch": ["x64"]
+      }
+    ],
+    "artifactName": "Minecraft-Mod-Visual-Editor-${version}-${arch}.${ext}",
+    "requestedExecutionLevel": "asInvoker"
+  },
+  "nsis": {
+    "oneClick": false,
+    "perMachine": false,
+    "allowToChangeInstallationDirectory": true,
+    "allowElevation": true,
+    "createDesktopShortcut": true,
+    "createStartMenuShortcut": true,
+    "shortcutName": "Minecraft Mod Visual Editor",
+    "runAfterFinish": true,
+    "deleteAppDataOnUninstall": false,
+    "artifactName": "Minecraft-Mod-Visual-Editor-Setup-${version}-${arch}.${ext}"
+  },
+  "portable": {
+    "artifactName": "Minecraft-Mod-Visual-Editor-Portable-${version}-${arch}.${ext}",
+    "requestExecutionLevel": "user",
+    "unpackDirName": "Minecraft-Mod-Visual-Editor"
+  },
+  "compression": "maximum",
+  "removePackageScripts": true,
+  "removePackageKeywords": true,
+  "electronLanguages": ["zh_CN", "en_US"]
+}
